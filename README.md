@@ -1,60 +1,32 @@
 <!--header-->
 <table>
   <tr><td colspan="2"><a href="/README.md#-plugins">← Back to plugins index</a></td></tr>
-  <tr><th colspan="2"><h3>📜 Repository licenses</h3></th></tr>
-  <tr><td colspan="2" align="center"><p>This plugin display repository license informations like permissions, limitations and conditions along with additional stats about dependencies.</p>
+  <tr><th colspan="2"><h3>📌 Developer Java</h3></th></tr>
+  <tr><td colspan="2" align="center"><p>This plugin displays <a href="https://github.com/stars?filter=topics">starred topics</a>.</p>
+<p>Check out <a href="https://github.com/topics">GitHub topics</a> to search interesting topics.</p>
 </td></tr>
   <tr><th>⚠️ Disclaimer</th><td><p>This plugin is not affiliated, associated, authorized, endorsed by, or in any way officially connected with <a href="https://github.com">GitHub</a>.
 All product and company names are trademarks™ or registered® trademarks of their respective holders.</p>
 </td></tr>
-  <tr><th>ℹ Additional notes</th><td><blockquote>
-<p>⚠️ This is <strong>NOT</strong> legal advice, use at your own risk</p>
-</blockquote>
-<blockquote>
-<p>💣 This plugin <strong>SHOULD NOT</strong> be enabled on web instances, since it allows raw command injection.
-This could result in compromised server!</p>
-</blockquote>
-</td></tr>
   <tr>
     <th rowspan="3">Supported features<br><sub><a href="metadata.yml">→ Full specification</a></sub></th>
-    <td><a href="/source/templates/repository/README.md"><code>📘 Repository template</code></a></td>
+    <td><a href="/source/templates/classic/README.md"><code>📗 Classic template</code></a> <a href="/source/templates/markdown/README.md"><code>📒 Markdown template</code></a></td>
   </tr>
   <tr>
-    <td><code>📓 Repositories</code></td>
+    <td><code>👤 Users</code></td>
   </tr>
   <tr>
-    <td><code>🔑 (scopeless)</code> <code>read:org (optional)</code> <code>read:user (optional)</code> <code>read:packages (optional)</code> <code>repo (optional)</code></td>
+    <td><i>No tokens are required for this plugin</i></td>
   </tr>
   <tr>
     <td colspan="2" align="center">
-      <details open><summary>Permissions, limitations and conditions</summary><img src="https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.licenses.svg" alt=""></img></details>
-      <details open><summary>Licenses overview</summary><img src="https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.licenses.ratio.svg" alt=""></img></details>
+      <details open><summary>With icons</summary><img src="https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.topics.icons.svg" alt=""></img></details>
+      <details open><summary>With labels</summary><img src="https://github.com/lowlighter/metrics/blob/examples/metrics.plugin.topics.svg" alt=""></img></details>
       <img width="900" height="1" alt="">
     </td>
   </tr>
 </table>
 <!--/header-->
-
-## 🔎 Licenses analysis
-
-Use to `plugin_licenses_setup` command to setup project dependencies.
-
-*Example: setup a NodeJS project using `npm ci`*
-```yml
-- name: Licenses and permissions
-  with:
-    repo: metrics
-    plugin_licenses: yes
-    plugin_licenses_setup: npm ci
-```
-
-Dependencies will be analyzed by [GitHub licensed](https://github.com/github/licensed) and compared against GitHub known licenses.
-
-> ⚠️ This is **NOT** legal advice, use at your own risk
-
-> 💣 This plugin **SHOULD NOT** be enabled on web instances, since it allows raw command injection.
-> This could result in compromised server!
-
 
 ## ➡️ Available options
 
@@ -64,55 +36,66 @@ Dependencies will be analyzed by [GitHub licensed](https://github.com/github/lic
     <td align="center" nowrap="nowrap">Option</i></td><td align="center" nowrap="nowrap">Description</td>
   </tr>
   <tr>
-    <td nowrap="nowrap"><h4><code>plugin_licenses</code></h4></td>
-    <td rowspan="2"><p>Enable licenses plugin</p>
+    <td nowrap="nowrap"><h4><code>plugin_topics</code></h4></td>
+    <td rowspan="2"><p>Enable topics plugin</p>
 <img width="900" height="1" alt=""></td>
   </tr>
   <tr>
     <td nowrap="nowrap">🌐 Web instances must configure <code>settings.json</code>:
 <ul>
-<li><i>metrics.cpu.overuse</i></li>
-<li><i>metrics.run.tempdir</i></li>
-<li><i>metrics.run.git</i></li>
-<li><i>metrics.run.licensed</i></li>
-<li><i>metrics.run.user.cmd</i></li>
+<li><i>metrics.run.puppeteer.scrapping</i></li>
 </ul>
 <b>type:</b> <code>boolean</code>
 <br>
 <b>default:</b> no<br></td>
   </tr>
   <tr>
-    <td nowrap="nowrap"><h4><code>plugin_licenses_setup</code></h4></td>
-    <td rowspan="2"><p>Setup command</p>
-<blockquote>
-<p>ℹ️ Depending on the project, this may not be required.
-The example command is intended for NodeJs projects that use <code>npm</code> to install their dependencies.</p>
-</blockquote>
+    <td nowrap="nowrap"><h4><code>plugin_topics_mode</code></h4></td>
+    <td rowspan="2"><p>Display mode</p>
+<ul>
+<li><code>labels</code>: display labels</li>
+<li><code>icons</code>: display icons <em>(topics without icons will not be displayed)</em></li>
+<li><code>starred</code>: alias for <code>labels</code></li>
+<li><code>mastered</code>: alias for <code>icons</code></li>
+</ul>
 <img width="900" height="1" alt=""></td>
   </tr>
   <tr>
     <td nowrap="nowrap"><b>type:</b> <code>string</code>
-<br></td>
+<br>
+<b>default:</b> starred<br>
+<b>allowed values:</b><ul><li>labels</li><li>icons</li><li>starred</li><li>mastered</li></ul></td>
   </tr>
   <tr>
-    <td nowrap="nowrap"><h4><code>plugin_licenses_ratio</code></h4></td>
-    <td rowspan="2"><p>Used licenses ratio</p>
+    <td nowrap="nowrap"><h4><code>plugin_topics_sort</code></h4></td>
+    <td rowspan="2"><p>Sorting method</p>
+<ul>
+<li><code>stars</code>: sort by most stars</li>
+<li><code>activity</code>: sort by recent activity</li>
+<li><code>starred</code>: sort by starred date</li>
+<li><code>random</code>: sort randomly</li>
+</ul>
 <img width="900" height="1" alt=""></td>
   </tr>
   <tr>
-    <td nowrap="nowrap"><b>type:</b> <code>boolean</code>
+    <td nowrap="nowrap"><b>type:</b> <code>string</code>
 <br>
-<b>default:</b> no<br></td>
+<b>default:</b> stars<br>
+<b>allowed values:</b><ul><li>stars</li><li>activity</li><li>starred</li><li>random</li></ul></td>
   </tr>
   <tr>
-    <td nowrap="nowrap"><h4><code>plugin_licenses_legal</code></h4></td>
-    <td rowspan="2"><p>Permissions, limitations and conditions about used licenses</p>
+    <td nowrap="nowrap"><h4><code>plugin_topics_limit</code></h4></td>
+    <td rowspan="2"><p>Display limit</p>
 <img width="900" height="1" alt=""></td>
   </tr>
   <tr>
-    <td nowrap="nowrap"><b>type:</b> <code>boolean</code>
+    <td nowrap="nowrap"><b>type:</b> <code>number</code>
+<i>(0 ≤
+𝑥
+≤ 20)</i>
 <br>
-<b>default:</b> yes<br></td>
+<b>zero behaviour:</b> disable</br>
+<b>default:</b> 15<br></td>
   </tr>
 </table>
 <!--/options-->
@@ -121,30 +104,26 @@ The example command is intended for NodeJs projects that use <code>npm</code> to
 
 <!--examples-->
 ```yaml
-name: Licenses and permissions
+name: Labels
+uses: lowlighter/metrics@latest
 with:
-  filename: metrics.plugin.licenses.svg
-  token: ${{ secrets.METRICS_TOKEN }}
+  filename: metrics.plugin.topics.svg
+  token: NOT_NEEDED
   base: ""
-  template: repository
-  repo: metrics
-  plugin_licenses: yes
-  plugin_licenses_setup: bash -c '[[ -f package.json ]] && npm ci || true'
+  plugin_topics: yes
+  plugin_topics_limit: 12
 
 ```
 ```yaml
-name: Licenses with open-source ratio graphs
+name: Icons
 uses: lowlighter/metrics@latest
 with:
-  filename: metrics.plugin.licenses.ratio.svg
-  token: ${{ secrets.METRICS_TOKEN }}
+  filename: metrics.plugin.topics.icons.svg
+  token: NOT_NEEDED
   base: ""
-  template: repository
-  repo: metrics
-  plugin_licenses: yes
-  plugin_licenses_setup: bash -c '[[ -f package.json ]] && npm ci || true'
-  plugin_licenses_legal: no
-  plugin_licenses_ratio: yes
+  plugin_topics: yes
+  plugin_topics_limit: 0
+  plugin_topics_mode: icons
 
 ```
 <!--/examples-->
