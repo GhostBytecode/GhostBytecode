@@ -1,9 +1,9 @@
 
-# Developer Full Stack Python
+# Developer Full Stack
 <p align="center">
   <!-- Typing SVG by DenverCoder1 - https://github.com/DenverCoder1/readme-typing-svg -->
   <a href="https://github.com/DenverCoder1/readme-typing-svg">
-    <img src="https://readme-typing-svg.demolab.com/?lines=Full-Stack%20java%20and%20data%20scientist;Experienced%20Data-Analyst%2FBack-End%20;&font=Fira%20Code&center=true&width=540&height=45&color=f75c7e&vCenter=true&pause=1000&size=22" /></a>
+    <img src="https://readme-typing-svg.demolab.com/?lines=Full-Stack%20python%20and%20data%20scientist;Experienced%20Data-Analyst%2FBack-End%20;&font=Fira%20Code&center=true&width=540&height=45&color=f75c7e&vCenter=true&pause=1000&size=22" /></a>
 </p>
 </p>
 
