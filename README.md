@@ -1,5 +1,5 @@
 
-#⛩️ Developer Full Stack ⛩️
+#Developer Full Stack
 <p align="center">
   <!-- Typing SVG by DenverCoder1 - https://github.com/DenverCoder1/readme-typing-svg -->
   <a href="https://github.com/DenverCoder1/readme-typing-svg">
@@ -29,4 +29,12 @@
   />
 </picture>
 
+
+Formações em andamento:
+
+[<img src="https://hermes.dio.me/tracks/aa71615b-e701-4cec-bb64-71ba6974c5fe.png" width="70">](https://web.dio.me/track/formacao-python-developer)[<img src="https://hermes.dio.me/tracks/bc454148-6e72-4047-95cc-d516706ae405.png" width="65">](https://web.dio.me/track/formacao-sql-db-specialist)
+
+Bootcamps Concluidos:
+
+[<img src="https://hermes.dio.me/tracks/608ecefd-1d10-42ea-9f58-3e7a4548ab3e.png" width="70">](https://www.dio.me/certificate/4233EB4D/share)
 
